@@ -1,0 +1,181 @@
+{
+  "run_at": "2026-11-02T16:21:35.569468+09:00",
+  "seed": 20261102,
+  "train_rows": 891,
+  "test_rows": 418,
+  "development_rows": 712,
+  "holdout_rows": 179,
+  "survived": 342,
+  "missing_train": {
+    "PassengerId": 0,
+    "Survived": 0,
+    "Pclass": 0,
+    "Name": 0,
+    "Sex": 0,
+    "Age": 177,
+    "SibSp": 0,
+    "Parch": 0,
+    "Ticket": 0,
+    "Fare": 0,
+    "Cabin": 687,
+    "Embarked": 2
+  },
+  "missing_test": {
+    "PassengerId": 0,
+    "Pclass": 0,
+    "Name": 0,
+    "Sex": 0,
+    "Age": 86,
+    "SibSp": 0,
+    "Parch": 0,
+    "Ticket": 0,
+    "Fare": 1,
+    "Cabin": 327,
+    "Embarked": 0
+  },
+  "duplicate_rows": 0,
+  "features": [
+    "Pclass",
+    "Age",
+    "SibSp",
+    "Parch",
+    "Fare",
+    "FamilySize",
+    "IsAlone",
+    "FarePerPerson",
+    "Sex",
+    "Embarked",
+    "Title",
+    "Deck"
+  ],
+  "models": [
+    {
+      "model": "Majority baseline",
+      "fold_accuracy": [
+        0.6153846153846154,
+        0.6153846153846154,
+        0.6197183098591549,
+        0.6197183098591549,
+        0.6126760563380281
+      ],
+      "cv_mean": 0.6165763813651137,
+      "cv_sd": 0.0030739460366437745,
+      "oof_accuracy": 0.6165730337078652,
+      "oof_auc": 0.5
+    },
+    {
+      "model": "Logistic regression",
+      "fold_accuracy": [
+        0.7972027972027972,
+        0.8251748251748252,
+        0.8309859154929577,
+        0.8169014084507042,
+        0.823943661971831
+      ],
+      "cv_mean": 0.8188417216586231,
+      "cv_sd": 0.013092242989095912,
+      "oof_accuracy": 0.8188202247191011,
+      "oof_auc": 0.8496708303086435
+    },
+    {
+      "model": "Random forest",
+      "fold_accuracy": [
+        0.8111888111888111,
+        0.8251748251748252,
+        0.8380281690140845,
+        0.823943661971831,
+        0.8591549295774648
+      ],
+      "cv_mean": 0.8314980793854033,
+      "cv_sd": 0.018145678370178994,
+      "oof_accuracy": 0.8314606741573034,
+      "oof_auc": 0.8601007951805218
+    },
+    {
+      "model": "Extra trees",
+      "fold_accuracy": [
+        0.8041958041958042,
+        0.8321678321678322,
+        0.8028169014084507,
+        0.7746478873239436,
+        0.823943661971831
+      ],
+      "cv_mean": 0.8075544174135721,
+      "cv_sd": 0.022310264376742703,
+      "oof_accuracy": 0.8075842696629213,
+      "oof_auc": 0.8478727043647316
+    },
+    {
+      "model": "Hist gradient boosting",
+      "fold_accuracy": [
+        0.8041958041958042,
+        0.8111888111888111,
+        0.8380281690140845,
+        0.852112676056338,
+        0.823943661971831
+      ],
+      "cv_mean": 0.8258938244853737,
+      "cv_sd": 0.01952892168816286,
+      "oof_accuracy": 0.8258426966292135,
+      "oof_auc": 0.8632881924453679
+    }
+  ],
+  "selected_model": "Random forest",
+  "cv_mean": 0.8314980793854033,
+  "holdout_accuracy": 0.8715083798882681,
+  "holdout_correct": 156,
+  "holdout_baseline_accuracy": 0.6145251396648045,
+  "holdout_confusion": [
+    [
+      101,
+      9
+    ],
+    [
+      14,
+      55
+    ]
+  ],
+  "holdout_auc": 0.8983530961791831,
+  "predicted_survivors": 155,
+  "submission_file": "submission_codex_20261102_v2.csv",
+  "submission_sha256": "d3953de6acc63e7a5a46f78adcd2420c7cfe9a27a047f5b7276d5cb26ec7728c",
+  "selection_rule": "Highest 5-fold mean accuracy on development set only; untouched 20% holdout evaluated once after selection; final fit on all 891 rows.",
+  "python": "3.12.13",
+  "sklearn": "1.9.1",
+  "kaggle_public_score": 0.76315,
+  "survival_by_sex": [
+    {
+      "Sex": "female",
+      "sum": 233,
+      "count": 314,
+      "mean": 0.7420382165605095
+    },
+    {
+      "Sex": "male",
+      "sum": 109,
+      "count": 577,
+      "mean": 0.18890814558058924
+    }
+  ],
+  "survival_by_class": [
+    {
+      "Pclass": 1,
+      "sum": 136,
+      "count": 216,
+      "mean": 0.6296296296296297
+    },
+    {
+      "Pclass": 2,
+      "sum": 87,
+      "count": 184,
+      "mean": 0.47282608695652173
+    },
+    {
+      "Pclass": 3,
+      "sum": 119,
+      "count": 491,
+      "mean": 0.24236252545824846
+    }
+  ],
+  "kaggle_verified_at": "2026-11-02T16:23:45.803326+09:00"
+}

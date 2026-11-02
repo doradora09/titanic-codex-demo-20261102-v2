@@ -1,0 +1,197 @@
+{
+  "title": "Titanicを学習し、Kaggleで確かめる",
+  "subtitle": "新規Computer Use実験 · 2026-11-02",
+  "status": "reviewed",
+  "generatedAt": "2026-11-02T16:23:45.803326+09:00",
+  "report": {
+    "asOf": "2026-11-02"
+  },
+  "exportPreferences": {
+    "selected": null,
+    "destinations": []
+  },
+  "queries": {
+    "models": {
+      "rows": [
+        {
+          "model": "Majority baseline",
+          "accuracy": 61.6576,
+          "sd": 0.3074
+        },
+        {
+          "model": "Logistic regression",
+          "accuracy": 81.8842,
+          "sd": 1.3092
+        },
+        {
+          "model": "Random forest",
+          "accuracy": 83.1498,
+          "sd": 1.8146
+        },
+        {
+          "model": "Extra trees",
+          "accuracy": 80.7554,
+          "sd": 2.231
+        },
+        {
+          "model": "Hist gradient boosting",
+          "accuracy": 82.5894,
+          "sd": 1.9529
+        }
+      ],
+      "source": {
+        "kind": "file",
+        "title": "Titanic新規実験の計算結果",
+        "label": "Kaggle Titanic / train.py",
+        "executedAt": "2026-11-02T16:21:35.569468+09:00",
+        "files": [
+          "analysis.json",
+          "train.py",
+          "provenance.json"
+        ],
+        "links": [
+          {
+            "label": "Titanic公式データ",
+            "url": "https://www.kaggle.com/competitions/titanic/data"
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "公式データ取得",
+            "detail": "Kaggle画面からZIP取得。provenance.jsonにSHA256を記録。"
+          },
+          {
+            "title": "学習・検証",
+            "detail": "seed=20261102。712件の開発データで共通5-fold CV。CV平均でモデル選択後、179件の保留データを1度評価。最後に891件全体で学習。"
+          }
+        ],
+        "caveats": [
+          "CVとholdoutとKaggle公開スコアは別の母集団・モデル学習条件であり、同一の性能推定値ではない。",
+          "乗客単位の分割。同一家族やチケットの相関を排除していない。"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "正解率",
+            "definition": "正しく予測した件数を評価対象件数で割った割合。CV値は5 foldの正解率の単純平均。"
+          }
+        ]
+      }
+    },
+    "evaluation": {
+      "rows": [
+        {
+          "evaluation": "開発データ5-fold CV",
+          "accuracy": 83.14980793854033,
+          "n": 712
+        },
+        {
+          "evaluation": "未使用holdout",
+          "accuracy": 87.15083798882681,
+          "n": 179
+        },
+        {
+          "evaluation": "Kaggle公開スコア",
+          "accuracy": 76.315,
+          "n": null
+        }
+      ],
+      "source": {
+        "kind": "file",
+        "title": "Titanic新規実験の計算結果",
+        "label": "Kaggle Titanic / train.py",
+        "executedAt": "2026-11-02T16:21:35.569468+09:00",
+        "files": [
+          "analysis.json",
+          "train.py",
+          "provenance.json"
+        ],
+        "links": [
+          {
+            "label": "Titanic公式データ",
+            "url": "https://www.kaggle.com/competitions/titanic/data"
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "公式データ取得",
+            "detail": "Kaggle画面からZIP取得。provenance.jsonにSHA256を記録。"
+          },
+          {
+            "title": "学習・検証",
+            "detail": "seed=20261102。712件の開発データで共通5-fold CV。CV平均でモデル選択後、179件の保留データを1度評価。最後に891件全体で学習。"
+          },
+          {
+            "title": "Kaggle採点",
+            "detail": "submission_codex_20261102_v2.csv: Complete、公開スコア0.76315。04-kaggle-score.jpgに画面証拠。"
+          }
+        ],
+        "caveats": [
+          "CVとholdoutとKaggle公開スコアは別の母集団・モデル学習条件であり、同一の性能推定値ではない。",
+          "乗客単位の分割。同一家族やチケットの相関を排除していない。"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "正解率",
+            "definition": "正しく予測した件数を評価対象件数で割った割合。CV値は5 foldの正解率の単純平均。"
+          }
+        ]
+      }
+    },
+    "survival": {
+      "rows": [
+        {
+          "group": "female",
+          "rate": 74.20382165605095,
+          "survived": 233,
+          "n": 314
+        },
+        {
+          "group": "male",
+          "rate": 18.890814558058924,
+          "survived": 109,
+          "n": 577
+        }
+      ],
+      "source": {
+        "kind": "file",
+        "title": "Titanic新規実験の計算結果",
+        "label": "Kaggle Titanic / train.py",
+        "executedAt": "2026-11-02T16:21:35.569468+09:00",
+        "files": [
+          "analysis.json",
+          "train.py",
+          "provenance.json"
+        ],
+        "links": [
+          {
+            "label": "Titanic公式データ",
+            "url": "https://www.kaggle.com/competitions/titanic/data"
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "公式データ取得",
+            "detail": "Kaggle画面からZIP取得。provenance.jsonにSHA256を記録。"
+          },
+          {
+            "title": "学習・検証",
+            "detail": "seed=20261102。712件の開発データで共通5-fold CV。CV平均でモデル選択後、179件の保留データを1度評価。最後に891件全体で学習。"
+          }
+        ],
+        "caveats": [
+          "CVとholdoutとKaggle公開スコアは別の母集団・モデル学習条件であり、同一の性能推定値ではない。",
+          "乗客単位の分割。同一家族やチケットの相関を排除していない。"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "正解率",
+            "definition": "正しく予測した件数を評価対象件数で割った割合。CV値は5 foldの正解率の単純平均。"
+          }
+        ]
+      }
+    }
+  },
+  "surface": "report",
+  "id": "report:701dc3b2-50ed-40e8-8fb2-56b2389f3012",
+  "buildStatus": "complete"
+}
